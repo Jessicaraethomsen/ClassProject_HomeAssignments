@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Launch the balloon!</title>
+<style type="text/css">
+#space {
+	width: 100%;
+	height: 700px;
+	text-align: center;
+    background: linear-gradient(pink,lightblue);
+}
+#rocket {
+	width: inherit;
+	position: absolute;
+	bottom: 0px;
+}
+</style>
+</head>
+
+<body>
+<button id="trigger">Launch the balloon!</button>
+<button id="trigger2">Ground the balloon!</button>
+<h2 id="msg"> Rocket idyl</h2>
+<div id="space">
+  <div id="rocket"><img src="../../../../Desktop/JS-Games-master/hot-air-balloon.png" height="150" alt="space rocket"/></div>
+</div>
+<script type="text/javascript">
+	
+    //variables we dont need to delecar variable types
+	//Scope means: Extend or range of view
+	//what does this mean:  Global or Local
+	//Global can be used anywhere.
+	//Local means they are placed in a function
+	var rocket = document.getElementById("rocket"); 
+	var trigger = document.getElementById("trigger"); 
+    var trigger2 = document.getElementById("trigger2"); 
+    var msg = document.getElementById("msg"); 
+
+	
+    //trigger on the button move the rocket
+	//this gives us access to the DOM
+	//we are goin to access the dom, and find these elements
+	//addeventlistener: 3 function... event is if there is any event.
+	
+	
+	//trigger is variable  
+	//addEventlistener
+	//click
+	//launch rocket is a function
+	trigger.addEventListener('click', launchrocket2);
+	trigger2.addEventListener('click', launchrocket2);
+	var pos = 0;
+
+	function launchrocket2(){
+	
+		
+	msg.innerHTML= 'Rocket launched'
+	setInterval(function(){pos++, rocket.style.bottom = pos + 'px'}, 5);  //here is a quick funtion /arguments annyomous function for the speed. to trigger a direct function. it has no name
+	
+	//arugment is what you want to do
+	//parameter is when it is created
+	
+	}
+	
+	
+/*	
+	
+	
+	function launchRocket() {
+	 var elem = document.getElementById("rocket"); //Here we have the varible of the rocket
+     var pos = 0;  //start position
+     var id = setInterval(frame, 10); //speed
+   //a tick event
+		
+	function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + '-50 px'; //manipulation the DOM on the fly
+      elem.style.bottom = pos + 'px';  
+    }
+   }
+	}
+	
+	 
+	function groundRocket() {
+	 var elem = document.getElementById("rocket");   
+     var pos = 0;  //start position
+     var id = setInterval(frame, 20); //speed
+  
+		
+	function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.bottom = pos + '50px'; 
+    }
+   }
+	}
+	*/
+	
+	
+	</script>
+</body>
+</html>
